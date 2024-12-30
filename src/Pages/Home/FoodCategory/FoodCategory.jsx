@@ -31,12 +31,14 @@ const FoodCategory = () => {
   return (
     <div>
       {/* Heading Section */}
-      <SectionHeader
-        heading={"ORDER ONLINE"}
-        subHeading={"From 11:00am to 10:00pm"}
-      ></SectionHeader>
+      <div className="">
+        <SectionHeader
+          heading={"ORDER ONLINE"}
+          subHeading={"From 11:00am to 10:00pm"}
+        ></SectionHeader>
+      </div>
       {/* Category Card */}
-      <div>
+      <div className="mb-20">
         <Swiper
           slidesPerView={3}
           spaceBetween={30}

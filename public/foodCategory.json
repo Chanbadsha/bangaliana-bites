@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Explore the Cosmos",
+    "cardImg": "../src/assets/home/slide1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "The Ocean's Mysteries",
+    "cardImg": "../src/assets/home/slide2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Mountain Adventures",
+    "cardImg": "../src/assets/home/slide3.jpg"
+  },
+
+  {
+    "id": 4,
+    "title": "Hidden Valleys",
+    "cardImg": "../src/assets/home/slide4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Urban Wonders",
+    "cardImg": "../src/assets/home/slide5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Desert Dreams",
+    "cardImg": "../src/assets/home/slide6.jpg"
+  }
+]

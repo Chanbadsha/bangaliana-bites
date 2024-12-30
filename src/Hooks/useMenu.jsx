@@ -8,11 +8,10 @@ const useMenu = () => {
       const { data } = await axios.get("../menu.json");
 
       setMenu(data);
-      // console.log(menu);
     };
     fetchData();
   }, []);
-  // console.log(menu);
+
   return menu;
 };
 

@@ -3,8 +3,9 @@ import CommonBanner from "../../../Shared/CommonBanner/CommonBanner";
 import bannerBg from "../../../assets/home/chef-service.jpg";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
 import useMenu from "../../../Hooks/useMenu";
-import axios from "axios";
+
 import MenuCard from "../../../Shared/MenuCard/MenuCard";
+import PrimaryBtn from "../../../Components/PrimaryBtn/PrimaryBtn";
 const PopularMenu = () => {
   const menu = useMenu();
 
@@ -25,6 +26,9 @@ const PopularMenu = () => {
         {PopularMenu.map((menu, index) => (
           <MenuCard key={index} cardInfo={menu}></MenuCard>
         ))}
+      </div>
+      <div className="text-center mb-12">
+        <PrimaryBtn title="View Full Menu"></PrimaryBtn>
       </div>
     </div>
   );

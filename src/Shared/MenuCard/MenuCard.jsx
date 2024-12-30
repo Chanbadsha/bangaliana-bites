@@ -1,8 +1,8 @@
 import React from "react";
 
 const MenuCard = ({ cardInfo }) => {
-  console.log(cardInfo);
   const { image, name, recipe, price } = cardInfo || [];
+
   return (
     <div className="flex gap-2">
       {/* Card Img */}

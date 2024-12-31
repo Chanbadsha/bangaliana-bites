@@ -20,7 +20,7 @@ const OfferPage = () => {
       </div>
       <div className="text-center mb-12">
         {" "}
-        <PrimaryBtn title="ORDER YOUR FAVOURITE FOOD"></PrimaryBtn>
+        <PrimaryBtn title="ORDER YOUR FAVORITE FOOD"></PrimaryBtn>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import CommonBanner from "../../../Shared/CommonBanner/CommonBanner";
 import bannerBg from "../../../assets/menu/banner3.jpg";
+import DesertSection from "../DesertSection/DesertSection";
 import OfferPage from "../OfferPage/OfferPage";
 const MenuPage = () => {
   return (
@@ -10,6 +11,7 @@ const MenuPage = () => {
         subHeading="Savor the authentic taste of Bengali cuisine, prepared with love and tradition. Each dish reflects the essence of our heritage, making every meal a celebration of culture."
       ></CommonBanner>
       <OfferPage></OfferPage>
+      <DesertSection></DesertSection>
     </div>
   );
 };

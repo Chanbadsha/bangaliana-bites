@@ -4,7 +4,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ReactStars from "react-rating-stars-component";
 const FeedBack = ({ feedBack }) => {
-  console.log(feedBack);
   const { name, details, rating } = feedBack || {};
 
   return (
@@ -25,9 +24,9 @@ const FeedBack = ({ feedBack }) => {
         ,
       </div>
       {/* FeedBack */}
-      <div className=" flex justify-center items-center flex-col text-center max-w-6xl mx-auto">
+      <div className=" flex justify-center text-sm md:text-base items-center flex-col px-6 text-center ">
         <p>{details}</p>
-        <p className=" text-4xl text-orange-400 ">{name}</p>
+        <p className=" text-2xl lg:text-4xl text-orange-400 ">{name}</p>
       </div>
     </div>
   );

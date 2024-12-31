@@ -38,7 +38,7 @@ const FoodCategory = () => {
         ></SectionHeader>
       </div>
       {/* Category Card */}
-      <div className="mb-20">
+      <div className="mb-20 px-2 ">
         <Swiper
           slidesPerView={3}
           spaceBetween={30}

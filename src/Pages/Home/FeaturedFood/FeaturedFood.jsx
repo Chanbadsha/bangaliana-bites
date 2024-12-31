@@ -18,14 +18,14 @@ const FeaturedFood = () => {
   const date = new DateObject();
   return (
     <div
-      className="hero h-[700px]"
+      className="hero  md:h-[700px]"
       style={{
         backgroundImage: `url(${image})`,
       }}
     >
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-neutral-content ">
-        <div className="max-w-5xl -mt-20 mx-auto ">
+        <div className="max-w-5xl lg:-mt-20 mx-auto ">
           {/* Header Section */}
           <div>
             <SectionHeader
@@ -34,13 +34,13 @@ const FeaturedFood = () => {
             ></SectionHeader>
           </div>
           {/* Content section */}
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid md:grid-cols-5 gap-4">
             {/* Image section */}
-            <div className="col-span-2">
+            <div className="md:col-span-2">
               <img src={image} alt={name} />
             </div>
             {/* Content Section */}
-            <div className="col-span-3 text-white">
+            <div className="md:col-span-3 text-white">
               <p> {date.format("dddd DD MMMM ")}</p>
               <h1 className="mb-5 text-3xl font-bold">{title}</h1>
               <p className="mb-5">{description}</p>

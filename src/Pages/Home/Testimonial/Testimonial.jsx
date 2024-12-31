@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FeedBack from "./FeedBack";
@@ -24,7 +24,7 @@ const Testimonial = () => {
     };
     fetchData();
   }, []);
-  console.log(feedBack);
+
   return (
     <div className="pb-16">
       {/* Header Section */}
@@ -35,7 +35,7 @@ const Testimonial = () => {
         ></SectionHeader>
         {/* Client FeedBack  */}
         {/* FeedBack Icon */}
-        <div className="text-7xl pb-12  flex  justify-center">
+        <div className="text-5xl md:text-7xl lg:pb-12  flex  justify-center">
           <FaMessage />
         </div>
         <div>
@@ -44,11 +44,15 @@ const Testimonial = () => {
               slidesPerView={1}
               spaceBetween={30}
               loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               pagination={{
                 clickable: true,
               }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
+              navigation={false}
+              modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
             >
               {feedBack.map((review) => (

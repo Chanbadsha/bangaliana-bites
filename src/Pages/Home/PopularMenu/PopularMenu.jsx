@@ -22,7 +22,7 @@ const PopularMenu = () => {
         heading="FROM OUR MENU"
         subHeading="Check it out"
       ></SectionHeader>
-      <div className="grid md:grid-cols-2 gap-12 mb-12">
+      <div className="grid md:grid-cols-2 px-6 gap-12 mb-12">
         {PopularMenu.map((menu, index) => (
           <MenuCard key={index} cardInfo={menu}></MenuCard>
         ))}

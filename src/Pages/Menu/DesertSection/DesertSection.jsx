@@ -12,7 +12,7 @@ const DesertSection = () => {
     subHeading:
       "Treat yourself to a world of sweetness! Our dessert selection is a celebration of rich flavors, creamy textures, and unforgettable indulgence.",
     menuData: dessertMenu,
-    btnTitle: "ORDER YOUR FAVORITE FOOD",
+    btnTitle: "ORDER YOUR FAVORITE DESSERTS",
   };
   return (
     <div>

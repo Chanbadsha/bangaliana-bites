@@ -2,6 +2,9 @@ import CommonBanner from "../../../Shared/CommonBanner/CommonBanner";
 import bannerBg from "../../../assets/menu/banner3.jpg";
 import DesertSection from "../DesertSection/DesertSection";
 import OfferPage from "../OfferPage/OfferPage";
+import PizzaSection from "../PizzaSection/PizzaSection";
+import SaladSection from "../SaladSection/SaladSection";
+import SoupSection from "../SoupsSection/SoupSection";
 const MenuPage = () => {
   return (
     <div>
@@ -12,6 +15,9 @@ const MenuPage = () => {
       ></CommonBanner>
       <OfferPage></OfferPage>
       <DesertSection></DesertSection>
+      <PizzaSection></PizzaSection>
+      <SoupSection></SoupSection>
+      <SaladSection></SaladSection>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import MenuPage from "../Pages/Menu/Menu/MenuPage";
 import ContactPage from "../Pages/ContactPage/ContactPage/ContactPage";
 import DashboardPage from "../Pages/DashboardPage/DashboardPage/DashboardPage";
 import ShopPage from "../Pages/ShopPage/ShopPage/ShopPage";
+import FoodDisplay from "../Pages/ShopPage/FoodDisplay/FoodDisplay";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,16 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <ShopPage></ShopPage>,
+        children: [
+          {
+            path: "/shop",
+            element: <FoodDisplay></FoodDisplay>,
+          },
+          {
+            path: "/shop/:category",
+            element: <FoodDisplay></FoodDisplay>,
+          },
+        ],
       },
     ],
   },

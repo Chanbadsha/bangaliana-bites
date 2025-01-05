@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer grid  grid-cols-2 max-w-7xl items-center justify-center mx-auto bg-neutral text-neutral-content gap-32 p-10">
+    <footer className="bg-neutral">
+      <div className="footer grid  grid-cols-2 max-w-7xl items-center justify-center mx-auto  text-neutral-content gap-32 p-10">
         <aside className="w-full  justify-end text-center">
           <div className="text-center space-y-3">
             <h2 className="text-2xl lg:text-4xl text-center">Contact us</h2>

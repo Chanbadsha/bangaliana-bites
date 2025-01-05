@@ -7,6 +7,8 @@ import ContactPage from "../Pages/ContactPage/ContactPage/ContactPage";
 import DashboardPage from "../Pages/DashboardPage/DashboardPage/DashboardPage";
 import ShopPage from "../Pages/ShopPage/ShopPage/ShopPage";
 import FoodDisplay from "../Pages/ShopPage/FoodDisplay/FoodDisplay";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -18,19 +20,19 @@ const router = createBrowserRouter([
         element: <Homepage></Homepage>,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <ContactPage></ContactPage>,
       },
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <DashboardPage></DashboardPage>,
       },
       {
-        path: "/menu",
+        path: "menu",
         element: <MenuPage></MenuPage>,
       },
       {
-        path: "/shop",
+        path: "shop",
         element: <ShopPage></ShopPage>,
         children: [
           {
@@ -42,6 +44,15 @@ const router = createBrowserRouter([
             element: <FoodDisplay></FoodDisplay>,
           },
         ],
+      },
+
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
       },
     ],
   },

@@ -7,12 +7,20 @@ import { Helmet } from "react-helmet-async";
 
 import useAuth from "../../Hooks/useAuth";
 import Loader from "../../Components/Loader/Loader";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 const Register = () => {
   const { createUser, googleLogin, loading } = useAuth();
   if (loading) {
     return <Loader></Loader>;
   }
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "demo",
+    },
+  });
+
   const {
     register,
     handleSubmit,

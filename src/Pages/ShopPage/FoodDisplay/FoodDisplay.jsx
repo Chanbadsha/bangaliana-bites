@@ -21,7 +21,7 @@ const FoodDisplay = () => {
   }, [menu, category]);
 
   return (
-    <div className="grid justify-center space-y-6 px-6 md:px-12 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-3">
+    <div className="grid max-w-7xl mx-auto justify-center space-y-6 px-6 md:px-12 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-3">
       {filterMenu.slice(0, 12).map((food) => (
         <FoodCard cardInfo={food}></FoodCard>
       ))}

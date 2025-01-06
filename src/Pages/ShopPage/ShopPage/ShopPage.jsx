@@ -4,7 +4,7 @@ import bannerBg from "../../../assets/shop/banner2.jpg";
 import FoodDisplay from "../FoodDisplay/FoodDisplay";
 const ShopPage = () => {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <CommonBanner
         bannerBg={bannerBg}
         heading="Your Gateway to Bengali Flavors"

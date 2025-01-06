@@ -6,7 +6,7 @@ import { IoTime } from "react-icons/io5";
 
 const LocationSection = () => {
   return (
-    <div className="mb-12">
+    <div className="max-w-7xl mx-auto mb-12">
       <SectionHeader
         heading="Our Location"
         subHeading="Visit Us"

@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo3.png";
+import useAuth from "../../Hooks/useAuth";
 const Navbar = () => {
+  const { user } = useAuth();
   const navOptions = (
     <>
       <li>
@@ -63,9 +65,18 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login" className="btn">
-            Login
-          </Link>
+          {user ? (
+            <>
+              <p>{user.email}</p>
+            </>
+          ) : (
+            <>
+              {" "}
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const CategorySection = ({ categoryInfo }) => {
   const { bannerBg, heading, subHeading, menuData, btnTitle } =
     categoryInfo || {};
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <CommonBanner
         bannerBg={bannerBg}
         heading={heading}

@@ -8,7 +8,7 @@ const OfferPage = () => {
   const todayOffer = menu.filter((offer) => offer.category === "offered");
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <SectionHeader
         heading="TODAY'S OFFER"
         subHeading={`Don't miss`}

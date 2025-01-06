@@ -1,7 +1,14 @@
+import Loader from "../../Components/Loader/Loader";
+import useAuth from "../../Hooks/useAuth";
+
 const CommonBanner = ({ bannerBg, heading, subHeading }) => {
+  const { loading } = useAuth();
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div
-      className="hero h-[500px] lg:h-[600px]"
+      className="hero max-w-7xl mx-auto h-[500px] lg:h-[600px]"
       style={{
         backgroundImage: `url(${bannerBg})`,
       }}

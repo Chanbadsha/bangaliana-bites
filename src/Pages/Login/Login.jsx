@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import loginLottie from "../../assets/Lottie/loginLottie.json";
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import Loader from "../../Components/Loader/Loader";
@@ -14,10 +14,13 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const { loading } = useAuth();
+  const { loading, googleLogin, setLoading, emailLogin, setUser } = useAuth();
   const [validate, setValidate] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    setValidate(false);
     loadCaptchaEnginge(6);
   }, []);
 
@@ -29,15 +32,34 @@ const Login = () => {
 
   const handleValidation = (e) => {
     const userCaptchaValue = e.target.value;
-    setValidate(validateCaptcha(userCaptchaValue));
+    if (validateCaptcha(userCaptchaValue) === true) {
+      setValidate(true);
+    }
   };
 
   const onSubmit = (data) => {
-    if (!validateCaptcha(data.captcha)) {
+    if (!validate) {
       alert("Captcha doesn't match");
       return;
     }
-    console.log("Form submitted", data);
+    // console.log(data);
+    emailLogin(data.email, data.password)
+      .then((result) => {
+        setUser(result.user);
+        navigate(location.state?.pathname || "/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // Social Login
+  const handlegoogleLogin = () => {
+    googleLogin().then((result) => {
+      console.log(result);
+      setLoading(false);
+      navigate(location.state?.pathname);
+    });
   };
 
   if (loading) {
@@ -151,10 +173,14 @@ const Login = () => {
                 </div>
               </form>
 
+              {/* Social Login */}
               <div className="flex flex-col items-center mt-6">
                 <div className="divider text-gray-500 text-sm">OR</div>
                 <div className="flex justify-center space-x-4 mt-4">
-                  <button className="btn btn-outline btn-accent rounded-full">
+                  <button
+                    onClick={handlegoogleLogin}
+                    className="btn btn-outline btn-accent rounded-full"
+                  >
                     <FaGoogle size={20} />
                   </button>
                   <button className="btn btn-outline btn-secondary rounded-full">

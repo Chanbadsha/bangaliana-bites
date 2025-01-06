@@ -2,8 +2,14 @@ import React from "react";
 import useMenu from "../../../Hooks/useMenu";
 import CategorySection from "../../../Shared/CategorySection/CategorySection";
 import pizzaBg from "../../../assets/menu/pizza-bg.jpg";
+import useAuth from "../../../Hooks/useAuth";
+import Loader from "../../../Components/Loader/Loader";
 const PizzaSection = () => {
   const menu = useMenu();
+  const { loading } = useAuth();
+  if (loading) {
+    return <Loader />;
+  }
   const PizzaMenu = menu.filter((pizza) => pizza.category == "pizza");
   const pizzaSectionInfo = {
     bannerBg: pizzaBg,

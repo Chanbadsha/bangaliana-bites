@@ -9,6 +9,7 @@ import ShopPage from "../Pages/ShopPage/ShopPage/ShopPage";
 import FoodDisplay from "../Pages/ShopPage/FoodDisplay/FoodDisplay";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: "menu",
-        element: <MenuPage></MenuPage>,
+        element: (
+          <PrivateRoutes>
+            <MenuPage></MenuPage>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "shop",

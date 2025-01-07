@@ -1,8 +1,35 @@
-# React + Vite
+Bangaliana Bites
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bangaliana Bites is a captivating website that brings the authentic flavors of Bangladeshi cuisine to life. This project is dedicated to showcasing the rich culinary heritage of Bangladesh while offering users a seamless and interactive online experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+
+Interactive Digital Menu: Browse through a variety of dishes with high-quality images and detailed descriptions.
+
+Reservation System: Effortlessly book a table at the restaurant.
+
+Promotions and Offers: Stay updated with special discounts and seasonal promotions.
+
+Cultural Aesthetic: Infused with traditional Bangladeshi designs and motifs for an authentic feel.
+
+Responsive Design: Ensures an optimal experience on all devices.
+
+Location and Contact Information: Integrated Google Maps and a contact form for easy communication.
+
+Technologies Used
+
+Frontend:
+
+HTML5
+
+CSS3
+
+JavaScript
+
+Hosting:
+
+Netlify
+
+For any inquiries or feedback, feel free to reach out!
+

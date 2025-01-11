@@ -4,7 +4,7 @@ import MainLayout from "../Layout/MainLayout/MainLayout";
 import Homepage from "../Pages/Home/HomePage/Homepage";
 import MenuPage from "../Pages/Menu/Menu/MenuPage";
 import ContactPage from "../Pages/ContactPage/ContactPage/ContactPage";
-import DashboardPage from "../Pages/DashboardPage/DashboardPage/DashboardPage";
+
 import ShopPage from "../Pages/ShopPage/ShopPage/ShopPage";
 import FoodDisplay from "../Pages/ShopPage/FoodDisplay/FoodDisplay";
 import Login from "../Pages/Login/Login";
@@ -12,6 +12,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,7 @@ const router = createBrowserRouter([
         path: "contact",
         element: <ContactPage></ContactPage>,
       },
-      {
-        path: "dashboard",
-        element: <DashboardPage></DashboardPage>,
-      },
+
       {
         path: "menu",
         element: (
@@ -66,6 +64,12 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "my-cart",
+        element: <MyCart></MyCart>,
+      },
+    ],
   },
 ]);
 export default router;

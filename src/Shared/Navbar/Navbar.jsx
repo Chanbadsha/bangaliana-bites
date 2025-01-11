@@ -68,12 +68,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="relative inline-block">
-            <button className="btn bg-gray-200 hover:bg-gray-300 rounded-full p-3 relative shadow-md focus:ring-2 focus:ring-primary focus:outline-none">
-              <FaCartPlus className="text-gray-700 text-2xl"></FaCartPlus>
-              <div className="absolute top-0.5 right-0.5 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow">
+            <Link
+              to="/dashboard/my-cart"
+              className="btn  min-h-0 min-w-0 bg-gray-200 hover:bg-gray-300 p-0 relative w-12 h-12 rounded-full shadow-md focus:ring-2 focus:ring-primary focus:outline-none"
+            >
+              <FaCartPlus className="text-gray-700 p-0 text-xl"></FaCartPlus>
+              <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5  flex items-center justify-center shadow">
                 +99
               </div>
-            </button>
+            </Link>
           </div>
 
           {user ? (

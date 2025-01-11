@@ -8,9 +8,11 @@ import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import Loader from "../../Components/Loader/Loader";
 import { Cloudinary } from "@cloudinary/url-gen";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Register = () => {
   const { createUser, googleLogin, loading } = useAuth();
+  const axiosPublic = useAxiosPublic();
   if (loading) {
     return <Loader></Loader>;
   }
@@ -29,8 +31,19 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    const userInfo = {
+      name: data.name,
+      email: data.email,
+      isAdmin: false,
+    };
+    // console.log(userInfo);
+
     createUser(data.email, data.password).then((result) => {
-      console.log(result.user);
+      // console.log(result.user);
+
+      axiosPublic.post("/users", userInfo).then((result) => {
+        console.log(result.data);
+      });
     });
   };
 

@@ -2,8 +2,10 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo3.png";
 import useAuth from "../../Hooks/useAuth";
+import { FaCartPlus } from "react-icons/fa";
 const Navbar = () => {
   const { user } = useAuth();
+  console.log(user);
   const navOptions = (
     <>
       <li>
@@ -65,17 +67,33 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
+          <div className="relative inline-block">
+            <button className="btn bg-gray-200 hover:bg-gray-300 rounded-full p-3 relative shadow-md focus:ring-2 focus:ring-primary focus:outline-none">
+              <FaCartPlus className="text-gray-700 text-2xl"></FaCartPlus>
+              <div className="absolute top-0.5 right-0.5 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow">
+                +99
+              </div>
+            </button>
+          </div>
+
           {user ? (
-            <>
-              <p>{user.email}</p>
-            </>
+            <div className="flex items-center space-x-3">
+              <img
+                src={user.photoURL}
+                alt="User Profile"
+                className="w-10 h-10 rounded-full border-2 border-primary"
+              />
+              <span className="text-sm font-medium">
+                {user.displayName || "User"}
+              </span>
+            </div>
           ) : (
-            <>
-              {" "}
-              <Link to="/login" className="btn">
-                Login
-              </Link>
-            </>
+            <Link
+              to="/login"
+              className="btn bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              Login
+            </Link>
           )}
         </div>
       </div>

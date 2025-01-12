@@ -1,7 +1,5 @@
-import React from "react";
 import SectionHeader from "../../../Components/SectionHeader/SectionHeader";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import useAuth from "../../../Hooks/useAuth";
+
 import useCart from "../../../Hooks/useCart";
 
 import { MdDeleteForever } from "react-icons/md";

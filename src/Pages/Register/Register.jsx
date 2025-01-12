@@ -1,28 +1,24 @@
 import Lottie from "lottie-react";
 import registerLottie from "../../assets/Lottie/registerLottie.json";
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 
 import useAuth from "../../Hooks/useAuth";
 import Loader from "../../Components/Loader/Loader";
-import { Cloudinary } from "@cloudinary/url-gen";
+
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Register = () => {
-  const { createUser, googleLogin, loading } = useAuth();
+  const { createUser, googleLogin, loading, setLoading } = useAuth();
   const axiosPublic = useAxiosPublic();
   if (loading) {
     return <Loader></Loader>;
   }
 
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: "demo",
-    },
-  });
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -39,20 +35,28 @@ const Register = () => {
     // console.log(userInfo);
 
     createUser(data.email, data.password).then((result) => {
-      // console.log(result.user);
-
       axiosPublic.post("/users", userInfo).then((result) => {
         console.log(result.data);
       });
+      setLoading(false);
+      navigate(location?.state?.pathname || "/");
     });
   };
-
-  //   console.log(watch("name"));
 
   // Social Login
   const handlegoogleLogin = () => {
     googleLogin().then(({ user }) => {
       console.log(user.displayName);
+      const userInfo = {
+        name: user.displayName,
+        email: user.email,
+        isAdmin: true,
+      };
+      axiosPublic.post("/users", userInfo).then((result) => {
+        console.log(result);
+      });
+      setLoading(false);
+      navigate(location?.state?.pathname || "/");
     });
   };
   return (

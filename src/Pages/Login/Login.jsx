@@ -12,13 +12,14 @@ import {
 } from "react-simple-captcha";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Login = () => {
   const { loading, googleLogin, setLoading, emailLogin, setUser } = useAuth();
   const [validate, setValidate] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-
+  const axiosPublic = useAxiosPublic();
   useEffect(() => {
     setValidate(false);
     loadCaptchaEnginge(6);
@@ -46,6 +47,7 @@ const Login = () => {
     emailLogin(data.email, data.password)
       .then((result) => {
         setUser(result.user);
+        setLoading(false);
         navigate(location.state?.pathname || "/");
       })
       .catch((err) => {
@@ -56,9 +58,18 @@ const Login = () => {
   // Social Login
   const handlegoogleLogin = () => {
     googleLogin().then((result) => {
-      console.log(result);
+      const user = result.user;
+
+      const userInfo = {
+        name: user.displayName,
+        email: user.email,
+        isAdmin: true,
+      };
+      axiosPublic.post("/users", userInfo).then((result) => {
+        console.log(result);
+      });
       setLoading(false);
-      navigate(location.state?.pathname);
+      navigate(location.state?.pathname || "/");
     });
   };
 

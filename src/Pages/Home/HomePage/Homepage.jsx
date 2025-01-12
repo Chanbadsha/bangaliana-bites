@@ -17,14 +17,16 @@ const Homepage = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <Banner></Banner>
-      <FoodCategory></FoodCategory>
-      <PopularMenu></PopularMenu>
-      <Contact></Contact>
-      <ChefRecommends></ChefRecommends>
-      <FeaturedFood></FeaturedFood>
-      <Testimonial></Testimonial>
+    <div>
+      <div className="max-w-7xl mx-auto">
+        <Banner></Banner>
+        <FoodCategory></FoodCategory>
+        <PopularMenu></PopularMenu>
+        <Contact></Contact>
+        <ChefRecommends></ChefRecommends>
+        <FeaturedFood></FeaturedFood>
+        <Testimonial></Testimonial>
+      </div>
     </div>
   );
 };

@@ -16,7 +16,6 @@ const FoodDisplay = () => {
       setFilterMenu(filteredItems);
     } else if (menu) {
       setFilterMenu(menu);
-      console.log(filterMenu);
     }
   }, [menu, category]);
 

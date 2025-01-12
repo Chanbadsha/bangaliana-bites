@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo3.png";
 import useAuth from "../../Hooks/useAuth";
 import { FaCartPlus } from "react-icons/fa";
+import useCart from "../../Hooks/useCart";
 const Navbar = () => {
   const { user } = useAuth();
-  console.log(user);
+  const [cart] = useCart();
   const navOptions = (
     <>
       <li>
@@ -14,10 +15,6 @@ const Navbar = () => {
 
       <li>
         <NavLink to="contact">Contact Us</NavLink>
-      </li>
-
-      <li>
-        <NavLink to="dashboard">Dashboard</NavLink>
       </li>
 
       <li>
@@ -74,7 +71,7 @@ const Navbar = () => {
             >
               <FaCartPlus className="text-gray-700 p-0 text-xl"></FaCartPlus>
               <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5  flex items-center justify-center shadow">
-                +99
+                +{cart.length}
               </div>
             </Link>
           </div>
